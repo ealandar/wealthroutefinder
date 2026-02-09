@@ -1,0 +1,260 @@
+/* === Reset & Base === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #1a1a2e;
+  --clr-secondary: #16213e;
+  --clr-accent: #e94560;
+  --clr-accent-hover: #ff6b81;
+  --clr-gold: #f5c518;
+  --clr-bg: #f4f4f9;
+  --clr-card: #ffffff;
+  --clr-text: #333333;
+  --clr-text-light: #666666;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--clr-text);
+  background: var(--clr-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* === Header === */
+header {
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 50%, #0f3460 100%);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--clr-gold);
+  letter-spacing: 0.5px;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.8rem;
+}
+
+nav ul li a {
+  color: #ffffffcc;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color var(--transition);
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--clr-gold);
+  transition: width var(--transition);
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* === Hero === */
+.hero {
+  background: linear-gradient(135deg, var(--clr-primary), #0f3460, var(--clr-secondary));
+  color: #ffffff;
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #ffffffbb;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Articles Section === */
+.articles {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.articles h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: var(--clr-primary);
+}
+
+/* === Article Grid === */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* === Card === */
+.card {
+  background: var(--clr-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--clr-primary);
+}
+
+.card p {
+  color: var(--clr-text-light);
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.read-more {
+  display: inline-block;
+  color: var(--clr-accent);
+  font-weight: 600;
+  transition: color var(--transition), gap var(--transition);
+}
+
+.read-more:hover {
+  color: var(--clr-accent-hover);
+}
+
+/* === Footer === */
+footer {
+  margin-top: auto;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+  color: #ffffffcc;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+footer a {
+  color: var(--clr-gold);
+  transition: color var(--transition);
+}
+
+footer a:hover {
+  color: var(--clr-accent-hover);
+}
+
+.disclaimer {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+
+/* === Responsive: Tablet === */
+@media (max-width: 900px) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* === Responsive: Mobile === */
+@media (max-width: 600px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .articles {
+    padding: 2.5rem 1rem;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
