@@ -1,0 +1,8 @@
+name = "wealthroutefinder"
+compatibility_date = "2025-02-08"
+
+[site]
+bucket = "_site"
+
+[env.production]
+name = "wealthroutefinder"
