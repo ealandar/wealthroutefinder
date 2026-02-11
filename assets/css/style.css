@@ -8,12 +8,12 @@
 }
 
 :root {
-  --clr-primary: #1a1a2e;
-  --clr-secondary: #16213e;
-  --clr-accent: #e94560;
-  --clr-accent-hover: #ff6b81;
-  --clr-gold: #f5c518;
-  --clr-bg: #f4f4f9;
+  --clr-primary: #1b5e20;
+  --clr-secondary: #2e7d32;
+  --clr-accent: #ff6d00;
+  --clr-accent-hover: #ff9100;
+  --clr-gold: #ffab00;
+  --clr-bg: #f4f9f4;
   --clr-card: #ffffff;
   --clr-text: #333333;
   --clr-text-light: #666666;
@@ -52,7 +52,7 @@ img {
 
 /* === Header === */
 header {
-  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 50%, #0f3460 100%);
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 50%, #388e3c 100%);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -109,7 +109,7 @@ nav ul li a:hover::after {
 
 /* === Hero === */
 .hero {
-  background: linear-gradient(135deg, var(--clr-primary), #0f3460, var(--clr-secondary));
+  background: linear-gradient(135deg, var(--clr-primary), #388e3c, var(--clr-secondary));
   color: #ffffff;
   text-align: center;
   padding: 5rem 2rem 4rem;
@@ -290,7 +290,7 @@ footer a:hover {
 
 /* === Highlight Box === */
 .highlight-box {
-  background: linear-gradient(135deg, #1a1a2e0a, #0f34600a);
+  background: linear-gradient(135deg, #1b5e200a, #388e3c0a);
   border-left: 4px solid var(--clr-gold);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 1.5rem;
